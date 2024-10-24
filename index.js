@@ -30,7 +30,7 @@ const upload = multer({ storage: storage });
 // Middleware para servir arquivos estáticos (opcional)
 app.use(express.static(path.join(__dirname, 'public')));
 
-const openaiApiKey = 'sk-proj-qB5osZlQytxfbGNicWMpT3BlbkFJ4iB9n9Yc0mbnota4fYd7'; // Substitua pelo seu OpenAI API Key
+const openaiApiKey = process.env.GPT_KEY; // Substitua pelo seu OpenAI API Key
 const openai = new OpenAI({
     apiKey: openaiApiKey
 });
